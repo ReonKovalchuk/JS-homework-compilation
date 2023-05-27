@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Домашки по JS</title>
+
+    <!-- <link rel="stylesheet" href="/css/bootstrap.min.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="/css/stylesheet.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Домашние задания с курса по JS от Skillbox</h1>
+        <div class="row">
+            <div class="col-4">
+                <form action="">
+                    <h2>Рандомайзер нечетных чисел в заданном интервале</h2>
+                    <div class="row">
+                        <div class="col">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">От</span>
+                                <input type="number" id="input-m" value="0" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">До</span>
+                                <input type="number" id="input-n" value="0" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <button onclick="oddRandomizer()" class="btn btn-outline-dark" type="button">Рандом!</button>
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Результат</span>
+                        <input type="number" id="output" disabled class="form-control">
+                    </div>
+                </form>
+            </div>
+            <div class="col-4">
+                <form action="">
+                    <h2>Проверка надежности пароля</h2>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Пароль</span>
+                        <input type="text" id="password" class="form-control">
+                    </div>
+                    <p class="password-tip">Пароль должен содержать от 4х символов и иметь символы '-'или '_'</p>
+                    <button onclick="passwordCheck()" class="btn btn-outline-dark" type="button">Проверить
+                        пароль</button>
+                    <div class="error-field"></div>
+                </form>
+            </div>
+            <div class="col-4">
+                <form action="">
+                    <h2>Приведение имени и фамилии к правильному регистру</h2>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Фамилия и Имя</span>
+                        <input type="text" name="name" id="name" placeholder="Фамилия Имя" class="form-control">
+                    </div>
+                    <button type="button" onclick="NormalizeName()" class="btn btn-outline-dark">Нормализовать</button>
+                </form>
+            </div>
+            <div class="col-4">
+                <form action="">
+                    <h2>Генератор массива заданной длины</h2>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">От</span>
+                        <input type="number" id="array-m" value="0" class="form-control">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">До</span>
+                        <input type="number" id="array-n" value="0" class="form-control">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Длина</span>
+                        <input type="number" name="array-count" id="array-count" value="0" class="form-control">
+                    </div>
+                    <button type="button" onclick="generateArray()" class="btn btn-outline-dark">Сгенерировать</button>
+                    <textarea id="array-output" cols="30" rows="10" class="form-control"></textarea>
+                </form>
+            </div>
+            <div class="col-4">
+                <form action="">
+                    <h2>Переворачиватель строки</h2>
+                    <div class="mb-3">
+
+                        <label for="string-input"> Переворачиваемая строка</label>
+                        <input type="text" id="string-input" class="form-control string-input">
+
+                    </div>
+
+                    <button type="button" class="turn-btn btn btn-outline-dark"
+                        onclick="stringTurn()">Перевернуть</button>
+                    <div class="mb-3">
+                        <label for="string-output">Перевёрнутая строка</label>
+                        <input type="text" id="string-output" class="form-control string-input">
+
+                    </div>
+                </form>
+            </div>
+            <div class="col-4">
+                <div class="minefield">
+                    <h2>Танк на минном поле</h2>
+                    Отметьте мины на поле:
+                    <div class="mines">
+                        <label for="mine1" class="checkbox-label">
+                            <input type="checkbox" name="mine1" id="mine1" class="checkbox">
+                            <span id="" class="mine field1"></span>
+                        </label>
+                        <label for="mine2" class="checkbox-label">
+                            <input type="checkbox" name="mine2" id="mine2" class="checkbox">
+                            <span id="" class="mine field2"></span>
+                        </label>
+                        <label for="mine3" class="checkbox-label">
+                            <input type="checkbox" name="mine3" id="mine3" class="checkbox">
+                            <span id="" class="mine field3"></span>
+                        </label>
+                        <label for="mine4" class="checkbox-label">
+                            <input type="checkbox" name="mine4" id="mine4" class="checkbox">
+                            <span id="" class="mine field4"></span>
+                        </label>
+                        <label for="mine5" class="checkbox-label">
+                            <input type="checkbox" name="mine5" id="mine5" class="checkbox">
+                            <span id="" class="mine field5"></span>
+                        </label>
+                        <label for="mine6" class="checkbox-label">
+                            <input type="checkbox" name="mine6" id="mine6" class="checkbox">
+                            <span id="" class="mine field6"></span>
+                        </label>
+                        <label for="mine7" class="checkbox-label">
+                            <input type="checkbox" name="mine7" id="mine7" class="checkbox">
+                            <span id="" class="mine field7"></span>
+                        </label>
+                        <label for="mine8" class="checkbox-label">
+                            <input type="checkbox" name="mine8" id="mine8" class="checkbox">
+                            <span id="" class="mine field8"></span>
+                        </label>
+                        <label for="mine9" class="checkbox-label">
+                            <input type="checkbox" name="mine9" id="mine9" class="checkbox">
+                            <span id="" class="mine field9"></span>
+                        </label>
+                        <label for="mine10" class="checkbox-label">
+                            <input type="checkbox" name="mine10" id="mine10" class="checkbox">
+                            <span id="" class="mine field10"></span>
+                        </label>
+                        <span class="mission-status"></span>
+                    </div>
+                    <button type="button" onclick="startTank()" class="btn btn-outline-dark">Запустить танк</button>
+                    <button type="button" onclick="clearMineField()" class="btn btn-outline-dark">Очистить поле</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

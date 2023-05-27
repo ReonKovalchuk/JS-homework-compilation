@@ -1,0 +1,197 @@
+body {
+    padding: 12px;
+}
+
+form,
+.minefield {
+    padding: 12px;
+    border: 1px solid #4a4a4a;
+    border-radius: 10px;
+    /* width: 500px; */
+    margin-bottom: 36px;
+
+}
+
+
+
+label {
+    margin-right: 12px;
+}
+
+button {
+    margin-bottom: 12px;
+}
+
+.password-tip {
+    font-size: 10px;
+}
+
+.error {
+    border-color: #6d0505;
+}
+
+.correct {
+    border-color: #0a540a;
+}
+
+.error-field {
+    color: #6d0505;
+}
+
+
+
+.turn-btn {
+    display: block;
+}
+
+.checkbox-label {
+    display: inline-block;
+    position: relative;
+    margin-right: 0px;
+    /* margin-bottom: 12px; */
+    cursor: pointer;
+    padding-left: 20px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    /* width: 20px; */
+    height: 20px;
+}
+
+.mine {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid #000;
+    border-radius: 3px;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0s 0s;
+}
+
+.checkbox {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    width: 0;
+    height: 0;
+}
+
+.mine:before {
+    position: absolute;
+    bottom: 1px;
+    right: 0;
+    opacity: 0;
+    text-align: center;
+    width: 19px;
+    height: 19px;
+    content: "💣";
+    font-size: 15px;
+}
+
+
+
+.mine:hover,
+.mine:focus {
+    border-color: #6e77cc;
+}
+
+.checkbox:checked+.mine:before {
+    display: block;
+    opacity: 1;
+}
+
+.ok {
+    background-color: #0a540a;
+}
+
+.damaged {
+    background-color: #bc871c;
+}
+
+.destroyed {
+    background-color: #6d0505;
+
+}
+
+.ok,
+.damaged,
+.destroyed {
+    transition: background-color 0.4s ease-in;
+}
+
+.ok.field1,
+.damaged.field1,
+.destroyed.field1 {
+    transition-delay: 0.5s;
+}
+
+.ok.field2,
+.damaged.field2,
+.destroyed.field2 {
+    transition-delay: 1.5s
+}
+
+.ok.field3,
+.damaged.field3,
+.destroyed.field3 {
+    transition-delay: 2.5s
+}
+
+.ok.field4,
+.damaged.field4,
+.destroyed.field4 {
+    transition-delay: 3.5s
+}
+
+.ok.field5,
+.damaged.field5,
+.destroyed.field5 {
+    transition-delay: 4.5s
+}
+
+.ok.field6,
+.damaged.field6,
+.destroyed.field6 {
+    transition-delay: 5.5s
+}
+
+.ok.field7,
+.damaged.field7,
+.destroyed.field7 {
+    transition-delay: 6.5s
+}
+
+.ok.field8,
+.damaged.field8,
+.destroyed.field8 {
+    transition-delay: 7.5s
+}
+
+.ok.field9,
+.damaged.field9,
+.destroyed.field9 {
+    transition-delay: 8.5s
+}
+
+.ok.field10,
+.damaged.field10,
+.destroyed.field10 {
+    transition-delay: 9.5s
+}
+
+.mission-status {
+    position: relative;
+    bottom: 5px;
+    margin-left: 6px;
+    opacity: 0;
+    transition: opacity 0s;
+}
+
+.mission-status.show {
+    opacity: 1;
+    transition: opacity 0.2s ease-in;
+}
