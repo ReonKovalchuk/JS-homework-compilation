@@ -2,8 +2,7 @@ body {
     padding: 12px;
 }
 
-form,
-.minefield {
+.module {
     padding: 12px;
     border: 1px solid #4a4a4a;
     border-radius: 10px;
@@ -194,4 +193,13 @@ button {
 .mission-status.show {
     opacity: 1;
     transition: opacity 0.2s ease-in;
+}
+
+.timer {
+    font-size: 72px;
+    font-weight: bold;
+}
+
+.hidden {
+    display: none;
 }
