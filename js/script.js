@@ -278,7 +278,6 @@ function startTimer() {
 
     if (nowSeconds == 0 && (timerMinutes != 0 || timerSeconds != 0)) {
 
-        console.log('запустить таймер с нуля');
         document.querySelector('.minutes').textContent = timerMinutes;
         document.querySelector('.seconds').textContent = timerSeconds;
         nowSeconds = timerMinutes * 60 + timerSeconds;
@@ -361,9 +360,6 @@ function timerTick() {
 })();
 
 $('body').on('input', '.input-number', function () {
-    console.log(typeof this.value);
-    // let stringValue = toString(this.value);
-    console.log(this.value.replace(/[^\d.]/g, ''));
     this.value = parseInt(this.value.replace(/[^\d.]/g, ''));
 
 });

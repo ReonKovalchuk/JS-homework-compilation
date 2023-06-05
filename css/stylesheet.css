@@ -17,9 +17,9 @@ label {
     margin-right: 12px;
 }
 
-button {
+/* button {
     margin-bottom: 12px;
-}
+} */
 
 .password-tip {
     font-size: 10px;
@@ -202,4 +202,13 @@ button {
 
 .hidden {
     display: none;
+}
+
+.list-group-item {
+    flex-grow: 1;
+}
+
+.task-done {
+    text-decoration: line-through;
+    color: rgba(33, 37, 41, 0.75);
 }

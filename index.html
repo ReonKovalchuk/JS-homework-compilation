@@ -39,7 +39,7 @@
                             </div>
                         </div>
                     </div>
-                    <button onclick="oddRandomizer()" class="btn btn-outline-dark" type="button">Рандом!</button>
+                    <button onclick="oddRandomizer()" class="btn btn-outline-dark mb-3" type="button">Рандом!</button>
 
                     <div class="input-group mb-3">
                         <span class="input-group-text">Результат</span>
@@ -97,7 +97,8 @@
                     </div>
 
 
-                    <button type="button" onclick="generateArray()" class="btn btn-outline-dark">Сгенерировать</button>
+                    <button type="button" onclick="generateArray()"
+                        class="btn btn-outline-dark mb-3">Сгенерировать</button>
                     <textarea id="array-output" cols="30" rows="5" class="form-control"></textarea>
                 </div>
             </div>
@@ -124,7 +125,7 @@
                 <div class="module">
                     <h2>Танк на минном поле</h2>
                     Отметьте мины на поле:
-                    <div class="mines">
+                    <div class="mines mb-3">
                         <label for="mine1" class="checkbox-label">
                             <input type="checkbox" name="mine1" id="mine1" class="checkbox">
                             <span id="" class="mine field1"></span>
@@ -176,9 +177,6 @@
             <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
                 <div class="module" id="select">
                     <h2>Формирование опций для селекта</h2>
-                    <!-- <select class="form-select" id="js-select" aria-label="Default select example">
-                        <option selected>Эти опции были созданы с помощью JS</option>
-                    </select> -->
                 </div>
             </div>
 
@@ -205,10 +203,20 @@
                     </div>
                 </div>
             </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+                <div class="module">
+                    <h2>Todo</h2>
+                    <div class="todo-app">
+
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
     <script src="bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
+    <script src="js/todo.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
