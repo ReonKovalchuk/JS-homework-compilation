@@ -11,15 +11,11 @@ body {
 
 }
 
-
-
 label {
     margin-right: 12px;
 }
 
-/* button {
-    margin-bottom: 12px;
-} */
+
 
 .password-tip {
     font-size: 10px;
@@ -36,8 +32,6 @@ label {
 .error-field {
     color: #6d0505;
 }
-
-
 
 .turn-btn {
     display: block;
@@ -90,8 +84,6 @@ label {
     content: "💣";
     font-size: 15px;
 }
-
-
 
 .mine:hover,
 .mine:focus {

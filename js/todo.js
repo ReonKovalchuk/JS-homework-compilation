@@ -6,7 +6,7 @@ function createNewTaskForm() {
     form.classList.add('input-group', 'mb-3');
     input.classList.add('form-control');
     input.placeholder = 'Новое дело';
-    button.classList.add('btn', 'btn-outline-dark', 'add-task');
+    button.classList.add('btn', 'btn-outline-dark', 'mb-0');
     button.textContent = 'Добавить дело';
     button.type = 'submit';
 
@@ -118,22 +118,18 @@ function createTodoApp(containerClass = '.todo-app',) {
 
 
 function refreshLocalStorage(task, operation) {
-    console.log(`task ${task.name}:${task.done} ${operation}`);
     savedTasks = JSON.parse(localStorage.getItem('savedTasks')) || [];
     if (operation == 'add') {
         savedTasks.push(task);
-        console.log('adding');
+
     } else {
         savedTasks.forEach(element => {
             if (element.name == task.name) {
                 index = savedTasks.indexOf(element);
-                console.log(index);
                 if (operation == 'remove') {
                     savedTasks.splice(index, 1);
-                    console.log('removing');
                 } else {
                     savedTasks[index] = task;
-                    console.log('refreshing');
                 }
             }
         });
