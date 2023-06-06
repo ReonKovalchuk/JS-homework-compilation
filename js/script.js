@@ -282,7 +282,7 @@ function startTimer() {
         document.querySelector('.seconds').textContent = timerSeconds;
         nowSeconds = timerMinutes * 60 + timerSeconds;
         renderTimer();
-    } else if (nowSeconds = 0 && timerMinutes == 0 && timerSeconds == 0) {
+    } else if (nowSeconds == 0 && timerMinutes == 0 && timerSeconds == 0) {
         return;
     }
 
