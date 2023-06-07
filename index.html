@@ -10,7 +10,7 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="css/bootstrap-grid.min.css">
     <link rel="stylesheet" href="css/stylesheet.css">
 
@@ -122,61 +122,63 @@
                 </form>
             </div> -->
             <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                <div class="module">
-                    <h2>Танк на минном поле</h2>
-                    Отметьте мины на поле:
-                    <div class="mines mb-3">
-                        <label for="mine1" class="checkbox-label">
-                            <input type="checkbox" name="mine1" id="mine1" class="checkbox">
-                            <span id="" class="mine field1"></span>
-                        </label>
-                        <label for="mine2" class="checkbox-label">
-                            <input type="checkbox" name="mine2" id="mine2" class="checkbox">
-                            <span id="" class="mine field2"></span>
-                        </label>
-                        <label for="mine3" class="checkbox-label">
-                            <input type="checkbox" name="mine3" id="mine3" class="checkbox">
-                            <span id="" class="mine field3"></span>
-                        </label>
-                        <label for="mine4" class="checkbox-label">
-                            <input type="checkbox" name="mine4" id="mine4" class="checkbox">
-                            <span id="" class="mine field4"></span>
-                        </label>
-                        <label for="mine5" class="checkbox-label">
-                            <input type="checkbox" name="mine5" id="mine5" class="checkbox">
-                            <span id="" class="mine field5"></span>
-                        </label>
-                        <label for="mine6" class="checkbox-label">
-                            <input type="checkbox" name="mine6" id="mine6" class="checkbox">
-                            <span id="" class="mine field6"></span>
-                        </label>
-                        <label for="mine7" class="checkbox-label">
-                            <input type="checkbox" name="mine7" id="mine7" class="checkbox">
-                            <span id="" class="mine field7"></span>
-                        </label>
-                        <label for="mine8" class="checkbox-label">
-                            <input type="checkbox" name="mine8" id="mine8" class="checkbox">
-                            <span id="" class="mine field8"></span>
-                        </label>
-                        <label for="mine9" class="checkbox-label">
-                            <input type="checkbox" name="mine9" id="mine9" class="checkbox">
-                            <span id="" class="mine field9"></span>
-                        </label>
-                        <label for="mine10" class="checkbox-label">
-                            <input type="checkbox" name="mine10" id="mine10" class="checkbox">
-                            <span id="" class="mine field10"></span>
-                        </label>
-                        <span class="mission-status"></span>
+                <div class="col-12">
+                    <div class="module">
+                        <h2>Танк на минном поле</h2>
+                        Отметьте мины на поле:
+                        <div class="mines mb-3">
+                            <label for="mine1" class="checkbox-label">
+                                <input type="checkbox" name="mine1" id="mine1" class="checkbox">
+                                <span id="" class="mine field1"></span>
+                            </label>
+                            <label for="mine2" class="checkbox-label">
+                                <input type="checkbox" name="mine2" id="mine2" class="checkbox">
+                                <span id="" class="mine field2"></span>
+                            </label>
+                            <label for="mine3" class="checkbox-label">
+                                <input type="checkbox" name="mine3" id="mine3" class="checkbox">
+                                <span id="" class="mine field3"></span>
+                            </label>
+                            <label for="mine4" class="checkbox-label">
+                                <input type="checkbox" name="mine4" id="mine4" class="checkbox">
+                                <span id="" class="mine field4"></span>
+                            </label>
+                            <label for="mine5" class="checkbox-label">
+                                <input type="checkbox" name="mine5" id="mine5" class="checkbox">
+                                <span id="" class="mine field5"></span>
+                            </label>
+                            <label for="mine6" class="checkbox-label">
+                                <input type="checkbox" name="mine6" id="mine6" class="checkbox">
+                                <span id="" class="mine field6"></span>
+                            </label>
+                            <label for="mine7" class="checkbox-label">
+                                <input type="checkbox" name="mine7" id="mine7" class="checkbox">
+                                <span id="" class="mine field7"></span>
+                            </label>
+                            <label for="mine8" class="checkbox-label">
+                                <input type="checkbox" name="mine8" id="mine8" class="checkbox">
+                                <span id="" class="mine field8"></span>
+                            </label>
+                            <label for="mine9" class="checkbox-label">
+                                <input type="checkbox" name="mine9" id="mine9" class="checkbox">
+                                <span id="" class="mine field9"></span>
+                            </label>
+                            <label for="mine10" class="checkbox-label">
+                                <input type="checkbox" name="mine10" id="mine10" class="checkbox">
+                                <span id="" class="mine field10"></span>
+                            </label>
+                            <span class="mission-status"></span>
+                        </div>
+                        <button type="button" onclick="startTank()" class="btn btn-outline-dark">Запустить танк</button>
+                        <button type="button" onclick="clearMineField()" class="btn btn-outline-dark">Очистить
+                            поле</button>
+
                     </div>
-                    <button type="button" onclick="startTank()" class="btn btn-outline-dark">Запустить танк</button>
-                    <button type="button" onclick="clearMineField()" class="btn btn-outline-dark">Очистить поле</button>
-
                 </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                <div class="module" id="select">
-                    <h2>Формирование опций для селекта</h2>
+                <div class="col-12">
+                    <div class="module" id="select">
+                        <h2>Формирование опций для селекта</h2>
+                    </div>
                 </div>
             </div>
 
@@ -211,11 +213,18 @@
                     </div>
                 </div>
             </div>
-
+            <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
+                <div class="module">
+                    <h2>Парочки</h2>
+                    <div class="pairs-app">
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <!-- <script src="js/bootstrap.bundle.min.js"></script> -->
     <script src="js/todo.js"></script>
+    <script src="js/couples.js"></script>
     <script src="js/script.js"></script>
 </body>
 

@@ -1,5 +1,6 @@
 body {
     padding: 12px;
+    --fieldSize: 4;
 }
 
 .module {
@@ -14,8 +15,6 @@ body {
 label {
     margin-right: 12px;
 }
-
-
 
 .password-tip {
     font-size: 10px;
@@ -33,10 +32,8 @@ label {
     color: #6d0505;
 }
 
-.turn-btn {
-    display: block;
-}
 
+/* ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 .checkbox-label {
     display: inline-block;
     position: relative;
@@ -187,6 +184,7 @@ label {
     transition: opacity 0.2s ease-in;
 }
 
+/* ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 .timer {
     font-size: 72px;
     font-weight: bold;
@@ -196,6 +194,7 @@ label {
     display: none;
 }
 
+/* ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
 .list-group-item {
     flex-grow: 1;
 }
@@ -203,4 +202,100 @@ label {
 .task-done {
     text-decoration: line-through;
     color: rgba(33, 37, 41, 0.75);
+}
+
+/* ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+.square-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.flip-card {
+    position: relative;
+    flex-basis: calc(100%/var(--fieldSize) - 6px);
+    margin: 3px;
+    box-sizing: border-box;
+    background-color: transparent;
+    perspective: 1000px;
+    opacity: 1;
+}
+
+.flip-card::before {
+    content: '';
+    display: block;
+    padding-top: 100%;
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    transition: transform 0.4s;
+    transform-style: preserve-3d;
+
+}
+
+/* Do a horizontal flip when you ckick on the card */
+.transform-active .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    border-radius: 6px;
+
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+    color: black;
+    backface-visibility: hidden;
+    background-image: url('/img/rubashka.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+}
+
+/* Style the back side */
+.flip-card-back {
+    background-color: lightblue;
+    color: black;
+    transform: rotateY(180deg);
+    font-size: 48px;
+    font-weight: bold;
+    display: flex;
+    /* added for centered text */
+    justify-content: center;
+    /* added for centered text */
+    align-items: center;
+}
+
+.hidden-card {
+    opacity: 0;
+    transition: opacity 0.4s ease-in;
+
+}
+
+.victory-container {
+    display: flex;
+    /* added for centered text */
+    justify-content: center;
+    /* added for centered text */
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    color: rgb(0, 128, 0);
+    font-size: 72px;
+    font-weight: bold;
 }
