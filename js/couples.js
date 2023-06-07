@@ -80,9 +80,8 @@ function createFlipCard(content) {
     let flipCardInner = document.createElement('div');
     let flipCardFront = document.createElement('div');
     let flipCardBack = document.createElement('div');
-    // let cardContent = document.createAttribute('span')
 
-    card.classList.add('flip-card');
+    card.classList.add('flip-card', 'animate__animated', 'animate__jackInTheBox');
     flipCardInner.classList.add('flip-card-inner');
     flipCardFront.classList.add('flip-card-front');
     flipCardBack.classList.add('flip-card-back');
