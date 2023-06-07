@@ -261,7 +261,9 @@ label {
 .flip-card-front {
     color: black;
     backface-visibility: hidden;
-    background-image: url('/img/rubashka.jpg');
+    background-color: #6e77cc;
+
+    background-image: url('../img/rubashka.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100%;
