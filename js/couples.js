@@ -80,7 +80,7 @@ function createFlipCard(content) {
     let flipCardInner = document.createElement('div');
     let flipCardFront = document.createElement('div');
     let flipCardBack = document.createElement('div');
-
+    // 
     card.classList.add('flip-card', 'animate__animated', 'animate__jackInTheBox');
     flipCardInner.classList.add('flip-card-inner');
     flipCardFront.classList.add('flip-card-front');
@@ -102,8 +102,13 @@ function createFlipCard(content) {
                     card.classList.toggle('transform-active');
                     setTimeout(() => {
                         resetTransform();
-                        this.classList.toggle('hidden-card');
-                        otherCard.classList.toggle('hidden-card');
+                        this.classList.remove('animate__jackInTheBox');
+                        this.classList.add('animate__fadeOut');
+                        this.classList.add('hidden-card');
+
+                        otherCard.classList.remove('animate__jackInTheBox');
+                        otherCard.classList.add('animate__fadeOut');
+                        otherCard.classList.add('hidden-card');
 
                         if (document.querySelectorAll('.hidden-card').length == fieldSize * fieldSize) {
                             //victory
