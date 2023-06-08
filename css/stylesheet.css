@@ -240,7 +240,7 @@ label {
     height: 100%;
     width: 100%;
     text-align: center;
-    transition: transform 0.4s;
+    transition: transform 0.2s;
     transform-style: preserve-3d;
 
 }

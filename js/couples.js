@@ -112,14 +112,22 @@ function createFlipCard(content) {
 
                         if (document.querySelectorAll('.hidden-card').length == fieldSize * fieldSize) {
                             //victory
-                            setTimeout(victory, 400);
+
+                            setTimeout(() => {
+                                fieldContainer = document.querySelector('.square-container');
+                                fieldContainer.innerHTML = '';
+                                victoryContainer = document.createElement('div');
+                                victoryContainer.classList.add('victory-container', 'animate__bounceInDown', 'animate__animated');
+                                victoryContainer.textContent = 'Победа!';
+                                fieldContainer.append(victoryContainer);
+                            }, 400);
                         };
-                    }, 800);
+                    }, 400);
                 } else {
                     card.classList.toggle('transform-active');
                     setTimeout(() => {
                         resetTransform();
-                    }, 800);
+                    }, 400);
 
                 }
             } else {
@@ -180,14 +188,14 @@ function fyShuffle(arr) {
 }
 
 
-function victory() {
-    fieldContainer = document.querySelector('.square-container');
-    fieldContainer.innerHTML = '';
-    victoryContainer = document.createElement('div');
-    victoryContainer.classList.add('victory-container', 'animate__bounceInDown', 'animate__animated');
-    victoryContainer.textContent = 'Победа!';
-    fieldContainer.append(victoryContainer);
-}
+// function victory() {
+//     fieldContainer = document.querySelector('.square-container');
+//     fieldContainer.innerHTML = '';
+//     victoryContainer = document.createElement('div');
+//     victoryContainer.classList.add('victory-container', 'animate__bounceInDown', 'animate__animated');
+//     victoryContainer.textContent = 'Победа!';
+//     fieldContainer.append(victoryContainer);
+// }
 
 
 document.addEventListener('DOMContentLoaded', function () {
