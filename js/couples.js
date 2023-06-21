@@ -90,6 +90,7 @@ function createFlipCard(content) {
     card.addEventListener('click', function () {
         if (this.classList.contains('transform-active')) {
             flippedCards--;
+            this.classList.toggle('transform-active');
         } else {
             flippedCards++;
             if (flippedCards == 2) {

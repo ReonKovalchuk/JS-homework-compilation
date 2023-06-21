@@ -20,7 +20,7 @@ function createNewTaskForm() {
     }
 }
 
-var savedTasks = [];
+let savedTasks = [];
 savedTasks = JSON.parse(localStorage.getItem('savedTasks')) || [];
 
 function createTodoList() {
@@ -99,15 +99,15 @@ function createTodoApp(containerClass = '.todo-app',) {
     newTaskForm.form.addEventListener('submit', function (e) {
         e.preventDefault();
 
-        savedTasks.forEach(element => {
-            if (element.name == newTaskForm.input.value) {
-                newTaskForm.input.value = '';
-                return;
-            }
-        });
+
+        //Проверим что добавляемый элемент не существует
+        let foundIndex = savedTasks.findIndex(savedTask => savedTask.name === newTaskForm.input.value)
+        if (foundIndex !== -1) {
+            newTaskForm.input.value = '';
+            return;
+        }
 
         if (!newTaskForm.input.value) { return };
-
 
         let task = createTask(newTaskForm.input.value);
 
@@ -123,16 +123,14 @@ function refreshLocalStorage(task, operation) {
         savedTasks.push(task);
 
     } else {
-        savedTasks.forEach(element => {
-            if (element.name == task.name) {
-                index = savedTasks.indexOf(element);
-                if (operation == 'remove') {
-                    savedTasks.splice(index, 1);
-                } else {
-                    savedTasks[index] = task;
-                }
-            }
-        });
+
+        let index = savedTasks.findIndex(savedTask => savedTask.name === task.name)
+        if (operation == 'remove') {
+            savedTasks.splice(index, 1);
+        } else {
+            savedTasks[index] = task;
+        }
+
     }
     localStorage.removeItem('savedTasks');
     localStorage.setItem('savedTasks', JSON.stringify(savedTasks))

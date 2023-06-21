@@ -267,10 +267,11 @@ function getOptionsArray() {
 }
 
 // переменная, которая отслеживает, сколько секунд прошло
-var nowSeconds = 0;
-var intervalVariable;
-var startBtn = document.querySelector('.timer-start');
-var pauseBtn = document.querySelector('.timer-pause');
+let nowSeconds = 0;
+let intervalVariable;
+let startBtn = document.querySelector('.timer-start');
+let pauseBtn = document.querySelector('.timer-pause');
+let audio = new Audio('../aud/bell.mp3')
 
 function startTimer() {
     let timerMinutes = parseInt(document.querySelector('.timer-minutes').value);
@@ -335,6 +336,7 @@ function timerTick() {
     renderTimer();
     if (nowSeconds == 0) {
         stopTimer();
+        audio.play();
     }
 
 
@@ -357,9 +359,10 @@ function timerTick() {
         select.insertAdjacentElement('beforeend', option)
     });
 
+    $('body').on('input', '.input-number', function () {
+        this.value = parseInt(this.value.replace(/[^\d.]/g, ''));
+
+    });
+
 })();
 
-$('body').on('input', '.input-number', function () {
-    this.value = parseInt(this.value.replace(/[^\d.]/g, ''));
-
-});
